@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Jwt.entity.Student;
@@ -26,7 +28,7 @@ public class StudentController {
 		 return studentService.getStudents();
 	}
 	
-	@PostMapping
+	@PostMapping()
 	public void saveUpdate(@RequestBody Student student){		
 		 studentService.saveOrUpdate(student);
 	}
@@ -39,6 +41,10 @@ public class StudentController {
 	@GetMapping("/{studentId}")
 	public Optional<Student> getById(@PathVariable("studentId") Long studentId){		
 		 return studentService.getStudent(studentId);
+	}
+	
+	public String welcome() {
+		return "Welcome form secure endpoint";
 	}
 	
 }
