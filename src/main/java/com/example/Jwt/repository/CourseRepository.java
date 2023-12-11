@@ -1,11 +1,14 @@
 package com.example.Jwt.repository;
 
+
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.Jwt.entity.Teacher;
+import com.example.Jwt.entity.Course;
+
 
 @Repository
-public interface TeacherRepository extends JpaRepository<Teacher,Long> {
-
+public interface CourseRepository extends JpaRepository<Course,Long> {
+	
 }

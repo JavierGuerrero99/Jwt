@@ -12,32 +12,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Jwt.entity.Teacher;
-import com.example.Jwt.service.TeacherService;
+import com.example.Jwt.entity.Course;
+import com.example.Jwt.service.CourseService;
 
 @RestController
-@RequestMapping(path="api/v1/teachers")
-public class TeacherController {
+@RequestMapping(path="api/v1/Courses")
+public class CourseController {
 	@Autowired
-	private TeacherService teacherService;
+	private CourseService courseService;
 	
 	@GetMapping
-	public List<Teacher> getAll(){
-		return teacherService.getTeachers();		
+	public List<Course> getAll(){
+		return courseService.getCourses();		
 	}
 	
 	@PostMapping
-	public void saveUpdate(@RequestBody Teacher teacher) {
-		teacherService.saveOrUpdate(teacher);	
+	public void saveUpdate(@RequestBody Course course) {
+		courseService.saveOrUpdate(course);	
 	}
 	
-	@DeleteMapping("/{teacherId}")
-	public void delete(@PathVariable("teacherId")Long studentId){
-		teacherService.delete(studentId);
+	@DeleteMapping("/{CourseId}")
+	public void delete(@PathVariable("CourseId")Long courseId){
+		courseService.delete(courseId);
 	}
 	
-	@GetMapping("/{teacherId}")
-	public Optional<Teacher> getById(@PathVariable("teacherId")Long teacherId){
-		return teacherService.getTeacher(teacherId);
+	@GetMapping("/{CourseId}")
+	public Optional<Course> getById(@PathVariable("courseId")Long courseId){
+		return courseService.getCourse(courseId);
 	}
 }
