@@ -27,6 +27,7 @@ public class Student implements UserDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long studentId;
 	
+	@Basic
 	@Column(nullable =false) 
 	private String username;
 	
@@ -35,9 +36,6 @@ public class Student implements UserDetails {
 	private String firstName;
 	
 	private String lastName;
-	
-	@Column(name= "email_address",unique =true,nullable = false)
-	private String email; 
 	
 	private String password;
 	

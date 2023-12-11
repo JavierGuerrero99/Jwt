@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Jwt.entity.Student;
 import com.example.Jwt.service.StudentService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping(path="api/v1/students")
+@RequiredArgsConstructor
 public class StudentController {
 	@Autowired
 	private StudentService studentService;

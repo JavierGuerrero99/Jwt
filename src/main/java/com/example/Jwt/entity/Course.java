@@ -28,10 +28,7 @@ public class Course implements UserDetails {
 	private String name;
 	
 	private List<Student> students;
-	
-	@Column(name="email_address",unique= true, nullable=false)
-	private String email;
-	
+		
 	public String getName() {
 		return this.name;
 	}

@@ -15,8 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Jwt.entity.Course;
 import com.example.Jwt.service.CourseService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping(path="api/v1/Courses")
+@RequiredArgsConstructor
 public class CourseController {
 	@Autowired
 	private CourseService courseService;
