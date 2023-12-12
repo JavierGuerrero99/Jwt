@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,8 +19,9 @@ import com.example.Jwt.service.CourseService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping(path="api/v1/Courses")
+@RequestMapping(path="/api/v1/courses")
 @RequiredArgsConstructor
+@CrossOrigin(origins="http://localhost:8080")
 public class CourseController {
 	@Autowired
 	private CourseService courseService;
@@ -29,7 +31,7 @@ public class CourseController {
 		return courseService.getCourses();		
 	}
 	
-	@PostMapping
+	@PostMapping("/save")
 	public void saveUpdate(@RequestBody Course course) {
 		courseService.saveOrUpdate(course);	
 	}

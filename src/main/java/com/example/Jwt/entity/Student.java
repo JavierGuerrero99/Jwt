@@ -31,6 +31,7 @@ public class Student implements UserDetails {
 	@Column(nullable =false) 
 	private String username;
 	
+	@ManyToMany
 	private List<Course> cursos;
 	
 	private String firstName;

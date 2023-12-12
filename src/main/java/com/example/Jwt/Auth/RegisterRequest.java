@@ -20,7 +20,7 @@ public class RegisterRequest {
 	String firstname;
 	String lastname;
 	String country;
-	List<Course> courses;
+	//List<Course> courses;
 	Role role;
 	
 }

@@ -1,4 +1,4 @@
-package com.example.Jwt.security;
+ package com.example.Jwt.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +39,7 @@ public class WebSecurityConfig {
 						authRequest -> authRequest
 						.requestMatchers(HttpMethod.GET).permitAll()
 						.requestMatchers(HttpMethod.OPTIONS).permitAll()
-						.requestMatchers("/auth/**").permitAll()
+						.requestMatchers("/auth/**").permitAll()						
 						.anyRequest()
 						.authenticated())
 				.sessionManagement(
@@ -49,5 +49,4 @@ public class WebSecurityConfig {
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
 	}
-
 }

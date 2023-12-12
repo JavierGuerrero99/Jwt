@@ -34,8 +34,7 @@ public class AuthService {
 	public AuthResponse register(RegisterRequest request) {
 		Student student = Student.builder()
 						.username(request.getUsername())
-						.password(passwordEncoder.encode(request.getPassword()))
-						.cursos(request.getCourses())
+						.password(passwordEncoder.encode(request.getPassword()))						
 						.firstName(request.getFirstname())
 						.lastName(request.getLastname())
 						.country(request.getCountry())
